@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+}
+
+.p1 {
+    padding: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/background2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ----------------- HEADER ------------- */
+
+header {
+    background-color: white;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------- MENU BURGER ------------- */
+
+.menu-burger {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.trait-1, .trait-2, .trait-3 {
+    height: 4px;
+    width: 32px;
+    background-color: rgba(0, 89, 12, 0.8);
+    margin-bottom: 6px;
+    border-radius: 5px;
+}
+
+/* ----------------- TITRE ------------- */
+
+h1 {
+    text-align: center;
+    color: rgba(0, 89, 12, 0.8);
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+/* ----------------- NAVBAR ------------- */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    text-align: center;
+}
+
+.navbar.toggle {
+    display: none;
+}
+
+nav > a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+nav > a:hover {
+    background-color: rgb(206, 206, 206);
+    border-radius: 5px;
+    /* color: white; */
+}
+
+/* ----------------- MAIN ------------- */
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------- CARD ------------- */
+
+.card {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgb(189, 189, 189);
+    transition: transform .2s ease-in-out;
+    border-radius: 5px;
+}
+
+.card:hover {
+    transform: scale(1.025);
+}
+
+.card:focus {
+    outline: none;
+    transform: scale(1.025);
+}
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 0;
+    color: rgba(0, 89, 12, 0.8);
+    margin-top: 15px;
+}
+
+.card-text {
+    display: none;
+}
+
+.card-price {
+    margin: 0;
+}
+
+.main:focus-within > .card:not(:focus) {
+    filter: grayscale(1);
+}
+
+/* ----------------- FOOTER ------------- */
+
+footer > p {
+    content: 'Copyright 2019';
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #333;
+    font-weight: 200;
+    font-size: 1em;
+}
+
+/* ----------------- KEYFRAMES ------------- */
+
+@keyframes blink {
+    25% {
+        box-shadow: 0 0 5px 8px cyan;
+    }
+
+    50% {
+        box-shadow: 0 0 5px 8px gold;
+    }
+
+    100% {
+        box-shadow: 0 0 5px 8px red;
+    }
+}
+
+/* ------------------- MEDIA QUERIES ------------------- */
+
+/* ----------------- MEDIA QUERIES - 768px ------------- */
+
+@media screen and (min-width : 768px) {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .card {
+        width: 30%;
+    }
+
+}
+
+/* ---------------- MEDIA QUERIES - 1024px ------------- */
+
+@media screen and (min-width : 1024px) {
+
+    header {
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .header {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu-burger {
+        display: none;
+    }
+
+    .navbar.toggle {
+        display: block;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    main {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .card {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        position: relative;
+        /* justify-content: space-between; */
+    }
+
+    .card-image {
+        width: 300px;
+        object-fit: cover;
+        padding-right: 30px;
+    }
+
+    h2 {
+        margin-top: 25px;
+    }
+
+    .card-cadre {
+        flex-direction: row;
+        margin-right: 20px;
+    }
+
+    .card-text {
+        display: block;
+        width: 70%;
+        font-weight: 300;
+    }
+
+    .card-price {
+        align-self: flex-end;
+        font-size: 1.5em;
+        font-weight: 700;
+        text-align: right;
+    }
+}
+
+/* ---------------- MEDIA QUERIES - 1440px ------------- */
+
+@media screen and (min-width : 1440px) {
+    .card-image {
+        width: 400px;
+    }
+
+    .navbar.toggle {
+        display: block;
+    }
+}
